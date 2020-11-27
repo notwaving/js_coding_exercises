@@ -88,7 +88,27 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error('scores is required');
-  // Add your code here!
+
+  // Add up the scores in an array - reduce, but for loop for now
+  
+  let total = 0;
+  let i;
+
+  for(i = 0; i < scores.length; i++){
+    total += scores[i];
+  }
+  // Calculate the mean by dividing by length of the scores array
+  const mean = total / scores.length;
+
+  // Handle answers that are floats, as tests only want two decimal places returned
+  if(parseInt(mean) == mean){
+    return mean;
+  } else {
+    // Handles a float with potentially more than two decimal places. 
+    // The result of toFixed() is a string, to this needs to be converted to a number before returning
+    let stringNum = mean.toFixed(2);
+    return parseFloat(stringNum);
+  };
 }
 
 function simpleFizzBuzz(n) {
