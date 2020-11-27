@@ -15,4 +15,6 @@ These challenges encourage you to keep on practicing your JavaScript skills!
   },
 ```
 
+N.B. Original "test" code is `"test": "jest",`
+
 Remember to change it back afterwards so it's running all the tests again!
