@@ -11,11 +11,13 @@ function getSquares(nums) {
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error('words is required');
+
   let camelCased = [];
+  // push first word in array to final array, camelCased
   camelCased.push(words[0]);
 
+  // Create new array, with first word removed
   let wordsToChange = words.slice(1);
-
   let i;
 
   for (i = 0; i < wordsToChange.length; i++) {
@@ -28,7 +30,17 @@ function camelCaseWords(words) {
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error('people is required');
-  // Your code here!
+  // This seems like a very roundabout way of finding the answer.
+  // With more time I'd like to experiment with the more powerful functions
+  let count = [];
+  let i;
+
+  for (i = 0; i < people.length; i++) {
+    count.push(people[i].subjects);
+  }
+  // At the moment we have a multidimensional array, and we need to flatten it so everything gets counted.
+  var flattened = [].concat.apply([], count);
+  return flattened.length;
 }
 
 function checkIngredients(menu, ingredient) {
