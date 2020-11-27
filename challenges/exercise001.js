@@ -22,8 +22,8 @@ function addVAT(originalPrice, vatRate) {
     // The result of toFixed() is a string, to this needs to be converted to a number before returning
     let stringNum = answer.toFixed(2);
     return parseFloat(stringNum);
-  };
-};
+  }
+}
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error('originalPrice is required');
@@ -39,7 +39,7 @@ function getSalePrice(originalPrice, reduction) {
     // The result of toFixed() is a string, to this needs to be converted to a number before returning
     let stringNum = answer.toFixed(2);
     return parseFloat(stringNum);
-  };
+  }
 }
 
 function getMiddleCharacter(str) {
@@ -108,7 +108,7 @@ function getMeanScore(scores) {
     // The result of toFixed() is a string, to this needs to be converted to a number before returning
     let stringNum = mean.toFixed(2);
     return parseFloat(stringNum);
-  };
+  }
 }
 
 function simpleFizzBuzz(n) {
