@@ -55,7 +55,14 @@ function reverseWord(word) {
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error('words is required');
-  // Add your code here!
+  // Words need to be reversed in place, i.e. retain original order in given array.
+  let reversedArray = []
+  let i;
+  for (i = 0; i < words.length; i++) {
+    let word = words[i].split('').reverse().join('');
+    reversedArray.push(word);
+  }
+  return reversedArray;
 }
 
 function countLinuxUsers(users) {
