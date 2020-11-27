@@ -15,10 +15,10 @@ function addVAT(originalPrice, vatRate) {
   let answer = ((originalPrice / 100) * vatRate) + originalPrice;
   // This handles answers that are floats, as tests only want two decimal places returned
   // parseInt(answer) == answer compares a round number (integer) to the calculated answer
-  if(parseInt(answer) == answer){
+  if (parseInt(answer) == answer) {
     return answer;
   } else {
-    // This handles a float with potentially more than two decimal places. 
+    // This handles a float with potentially more than two decimal places.
     // The result of toFixed() is a string, to this needs to be converted to a number before returning
     let stringNum = answer.toFixed(2);
     return parseFloat(stringNum);
@@ -32,10 +32,10 @@ function getSalePrice(originalPrice, reduction) {
   const answer = originalPrice - numToSubtract;
 
   // This handles answers that are floats, as tests only want two decimal places returned
-  if(parseInt(answer) == answer){
+  if (parseInt(answer) == answer) {
     return answer;
   } else {
-    // This handles a float with potentially more than two decimal places. 
+    // This handles a float with potentially more than two decimal places.
     // The result of toFixed() is a string, to this needs to be converted to a number before returning
     let stringNum = answer.toFixed(2);
     return parseFloat(stringNum);
@@ -48,11 +48,11 @@ function getMiddleCharacter(str) {
   // If number of letters is odd:
   if (str.length % 2 !== 0) {
     // (Minus one to offset zero indexing)
-    const oddMiddle = Math.round(str.length/2) -1;
+    const oddMiddle = Math.round(str.length / 2) - 1;
     return str.charAt(oddMiddle);
   } else {
-    const evenMiddle = Math.round(str.length/2) -1;
-    return str.charAt(evenMiddle) + str.charAt(evenMiddle + 1)
+    const evenMiddle = Math.round(str.length / 2) - 1;
+    return str.charAt(evenMiddle) + str.charAt(evenMiddle + 1);
   }
 }
 
@@ -65,7 +65,7 @@ function reverseWord(word) {
 function reverseAllWords(words) {
   if (words === undefined) throw new Error('words is required');
   // Words need to be reversed in place, i.e. retain original order in given array.
-  let reversedArray = []
+  let reversedArray = [];
   let i;
   for (i = 0; i < words.length; i++) {
     let word = words[i].split('').reverse().join('');
@@ -76,35 +76,36 @@ function reverseAllWords(words) {
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error('users is required');
-  
+
   let numOfLinuxUsers = 0;
   let i;
   for (i = 0; i < users.length; i++) {
-    if (users[i].type == "Linux") {
-      numOfLinuxUsers ++;
+    if (users[i].type == 'Linux') {
+      numOfLinuxUsers++;
     }
-  } return numOfLinuxUsers;
+  }
+  return numOfLinuxUsers;
 }
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error('scores is required');
 
   // Add up the scores in an array - reduce, but for loop for now
-  
+
   let total = 0;
   let i;
 
-  for(i = 0; i < scores.length; i++){
+  for (i = 0; i < scores.length; i++) {
     total += scores[i];
   }
   // Calculate the mean by dividing by length of the scores array
   const mean = total / scores.length;
 
   // Handle answers that are floats, as tests only want two decimal places returned
-  if(parseInt(mean) == mean){
+  if (parseInt(mean) == mean) {
     return mean;
   } else {
-    // Handles a float with potentially more than two decimal places. 
+    // Handles a float with potentially more than two decimal places.
     // The result of toFixed() is a string, to this needs to be converted to a number before returning
     let stringNum = mean.toFixed(2);
     return parseFloat(stringNum);
@@ -113,12 +114,12 @@ function getMeanScore(scores) {
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error('n is required');
-  if ((n % 3 == 0) && (n % 5 == 0)){
-    return "fizzbuzz";
+  if (n % 3 == 0 && n % 5 == 0) {
+    return 'fizzbuzz';
   } else if (n % 3 == 0) {
-    return "fizz";
+    return 'fizz';
   } else if (n % 5 == 0) {
-    return "buzz";
+    return 'buzz';
   } else {
     return n;
   }
