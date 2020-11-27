@@ -44,7 +44,16 @@ function getSalePrice(originalPrice, reduction) {
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error('str is required');
-  // Add your code here!
+
+  // If number of letters is odd:
+  if (str.length % 2 !== 0) {
+    // (Minus one to offset zero indexing)
+    const oddMiddle = Math.round(str.length/2) -1;
+    return str.charAt(oddMiddle);
+  } else {
+    const evenMiddle = Math.round(str.length/2) -1;
+    return str.charAt(evenMiddle) + str.charAt(evenMiddle + 1)
+  }
 }
 
 function reverseWord(word) {
