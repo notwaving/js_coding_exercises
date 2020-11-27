@@ -30,7 +30,7 @@ function getSalePrice(originalPrice, reduction) {
   if (reduction === undefined) throw new Error('reduction is required');
   const numToSubtract = (originalPrice / 100) * reduction;
   const answer = originalPrice - numToSubtract;
-  
+
   // This handles answers that are floats, as tests only want two decimal places returned
   if(parseInt(answer) == answer){
     return answer;
@@ -49,7 +49,8 @@ function getMiddleCharacter(str) {
 
 function reverseWord(word) {
   if (word === undefined) throw new Error('word is required');
-  // Add your code here!
+  const splitWord = word.split('');
+  return splitWord.reverse().join('');
 }
 
 function reverseAllWords(words) {
