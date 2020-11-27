@@ -13,15 +13,17 @@ function addVAT(originalPrice, vatRate) {
   if (vatRate === undefined) throw new Error('vatRate is required');
   // add 100 to the VAT percentage rate and divide by that number.)
   let answer = ((originalPrice / 100) * vatRate) + originalPrice;
-
+  // This handles answers with decimal places, as tests only want two returned
+  // parseInt(answer) == answer compares a round number (integer) to the calculated answer
   if(parseInt(answer) == answer){
     return answer;
   } else {
+    // This handles a float with potentially more than two decimal places. 
+    // The result of toFixed() is a string, to this needs to be converted to a number before returning
     let stringNum = answer.toFixed(2);
     return parseFloat(stringNum);
   };
 };
-
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error('originalPrice is required');
