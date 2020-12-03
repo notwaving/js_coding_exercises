@@ -67,13 +67,44 @@ function getCities(users) {
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error('nums is required');
-  // Your code here
+
+  let squareRootToTwo = [];
+  let i;
+
+  for (i = 0; i < nums.length; i++) {
+    // Check for integer vs float
+    if (Math.sqrt(nums[i]) % 1 == 0) {
+      squareRootToTwo.push(Math.sqrt(nums[i]));
+    } else {
+      // Remember that .toFixed() returns a string!
+      squareRootToTwo.push(parseFloat(Math.sqrt(nums[i]).toFixed(2)));
+    }
+  }
+  return squareRootToTwo;
 }
 
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error('sentences is required');
   if (!str) throw new Error('str is required');
-  // Your code here
+
+  // Convert all strings to lowercase
+  let sentencesLower = [];
+  let strLower = str.toLowerCase();
+
+  for (let i = 0; i < sentences.length; i++) {
+    sentencesLower.push(sentences[i].toLowerCase());
+  }
+
+  let results = [];
+
+  // for each sentence in array, if it includes the str, push that sentence to results
+  for (let i = 0; i < sentencesLower.length; i++) {
+    if (sentencesLower[i].includes(strLower)) {
+      results.push(sentences[i]);
+    }
+  }
+
+  return results;
 }
 
 function getLongestSides(triangles) {
