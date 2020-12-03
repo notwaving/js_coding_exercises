@@ -103,13 +103,22 @@ function findSentencesContaining(sentences, str) {
       results.push(sentences[i]);
     }
   }
-
   return results;
 }
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error('triangles is required');
-  // Your code here
+  /* 
+  A two dimensional array is passed to the function. 
+  For each internal array, push the largest number to a new one.
+  */
+
+  let longestSides = [];
+
+  for (let i = 0; i < triangles.length; i++) {
+    longestSides.push(Math.max(...triangles[i]));
+  }
+  return longestSides;
 }
 
 module.exports = {
