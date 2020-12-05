@@ -1,4 +1,4 @@
-findSmallNums = nums => {
+const findSmallNums = nums => {
   if (!nums) throw new Error('nums is required');
   // Looping through the nums array, return all items smaller than 1
   let smallNums = [];
@@ -12,7 +12,7 @@ findSmallNums = nums => {
   return smallNums;
 };
 
-findNamesBeginningWith = (names, char) => {
+const findNamesBeginningWith = (names, char) => {
   if (!names) throw new Error('names is required');
   if (!char) throw new Error('char is required');
   let beginsWithChar = [];
@@ -26,7 +26,7 @@ findNamesBeginningWith = (names, char) => {
   return beginsWithChar;
 };
 
-findVerbs = words => {
+const findVerbs = words => {
   if (!words) throw new Error('words is required');
 
   let verbs = [];
@@ -40,7 +40,7 @@ findVerbs = words => {
   return verbs;
 };
 
-getIntegers = nums => {
+const getIntegers = nums => {
   if (!nums) throw new Error('nums is required');
 
   let integers = [];
@@ -54,7 +54,7 @@ getIntegers = nums => {
   return integers;
 };
 
-getCities = users => {
+const getCities = users => {
   if (!users) throw new Error('users is required');
   let cities = [];
   let i = 0;
@@ -65,7 +65,7 @@ getCities = users => {
   return cities;
 };
 
-getSquareRoots = nums => {
+const getSquareRoots = nums => {
   if (!nums) throw new Error('nums is required');
 
   let squareRootToTwo = [];
@@ -83,7 +83,7 @@ getSquareRoots = nums => {
   return squareRootToTwo;
 };
 
-findSentencesContaining = (sentences, str) => {
+const findSentencesContaining = (sentences, str) => {
   if (!sentences) throw new Error('sentences is required');
   if (!str) throw new Error('str is required');
 
@@ -106,7 +106,7 @@ findSentencesContaining = (sentences, str) => {
   return results;
 };
 
-getLongestSides = triangles => {
+const getLongestSides = triangles => {
   if (!triangles) throw new Error('triangles is required');
   /* 
   A two dimensional array is passed to the function. 

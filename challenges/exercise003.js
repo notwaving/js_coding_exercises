@@ -1,4 +1,4 @@
-getSquares = nums => {
+const getSquares = nums => {
   if (nums === undefined) throw new Error('nums is required');
   let arrSquared = [];
   let i;
@@ -9,7 +9,7 @@ getSquares = nums => {
   return arrSquared;
 };
 
-camelCaseWords = words => {
+const camelCaseWords = words => {
   if (words === undefined) throw new Error('words is required');
 
   let camelCased = [];
@@ -28,7 +28,7 @@ camelCaseWords = words => {
   return camelCased.join('');
 };
 
-getTotalSubjects = people => {
+const getTotalSubjects = people => {
   if (people === undefined) throw new Error('people is required');
   // This seems like a very roundabout way of finding the answer.
   // With more time I'd like to experiment with the more powerful functions
@@ -43,7 +43,7 @@ getTotalSubjects = people => {
   return flattened.length;
 };
 
-checkIngredients = (menu, ingredient) => {
+const checkIngredients = (menu, ingredient) => {
   if (menu === undefined) throw new Error('menu is required');
   if (!ingredient) throw new Error('ingredient is required');
 
@@ -57,7 +57,7 @@ checkIngredients = (menu, ingredient) => {
   return answer;
 };
 
-duplicateNumbers = (arr1, arr2) => {
+const duplicateNumbers = (arr1, arr2) => {
   if (arr1 === undefined) throw new Error('arr1 is required');
   if (arr2 === undefined) throw new Error('arr2 is required');
 

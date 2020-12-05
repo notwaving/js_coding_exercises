@@ -1,12 +1,12 @@
-capitalize = word => word.charAt(0).toUpperCase() + word.slice(1);
+const capitalize = word => word.charAt(0).toUpperCase() + word.slice(1);
 
-generateInitials = (firstName, lastName) => {
+const generateInitials = (firstName, lastName) => {
   if (firstName === undefined) throw new Error('firstName is required');
   if (lastName === undefined) throw new Error('lastName is required');
   return firstName[0] + '.' + lastName[0];
 };
 
-addVAT = (originalPrice, vatRate) => {
+const addVAT = (originalPrice, vatRate) => {
   if (originalPrice === undefined) throw new Error('originalPrice is requied');
   if (vatRate === undefined) throw new Error('vatRate is required');
   // add 100 to the VAT percentage rate and divide by that number.)
@@ -20,7 +20,7 @@ addVAT = (originalPrice, vatRate) => {
   }
 };
 
-getSalePrice = (originalPrice, reduction) => {
+const getSalePrice = (originalPrice, reduction) => {
   if (originalPrice === undefined) throw new Error('originalPrice is required');
   if (reduction === undefined) throw new Error('reduction is required');
 
@@ -34,7 +34,7 @@ getSalePrice = (originalPrice, reduction) => {
   }
 };
 
-getMiddleCharacter = str => {
+const getMiddleCharacter = str => {
   if (str === undefined) throw new Error('str is required');
 
   // (Minus one to offset zero indexing)
@@ -48,14 +48,14 @@ getMiddleCharacter = str => {
   }
 };
 
-reverseWord = word => {
+const reverseWord = word => {
   if (word === undefined) throw new Error('word is required');
 
   const splitWord = [...word];
   return splitWord.reverse().join('');
 };
 
-reverseAllWords = words => {
+const reverseAllWords = words => {
   if (words === undefined) throw new Error('words is required');
   // Words need to be reversed in place, i.e. retain original order in given array.
   let reversedArray = [];
@@ -67,7 +67,7 @@ reverseAllWords = words => {
   return reversedArray;
 };
 
-countLinuxUsers = users => {
+const countLinuxUsers = users => {
   if (users === undefined) throw new Error('users is required');
 
   let numOfLinuxUsers = 0;
@@ -80,7 +80,7 @@ countLinuxUsers = users => {
   return numOfLinuxUsers;
 };
 
-getMeanScore = scores => {
+const getMeanScore = scores => {
   if (scores === undefined) throw new Error('scores is required');
 
   // Add up the scores in an array - reduce, but for loop for now
@@ -104,31 +104,33 @@ getMeanScore = scores => {
   }
 };
 
-simpleFizzBuzz = n => {
+const simpleFizzBuzz = n => {
   if (n === undefined) throw new Error('n is required');
 
-  // if (n % 15 === 0) {
-  //   return 'fizzbuzz';
-  // } else if (n % 3 === 0) {
-  //   return 'fizz';
-  // } else if (n % 5 === 0) {
-  //   return 'buzz';
-  // } else {
-  //   return n;
-  // }
-  switch (0) {
-    case n % 15:
-      return 'fizzbuzz';
-      break;
-    case n % 3:
-      return 'fizz';
-      break;
-    case n % 5:
-      return 'buzz';
-      break;
-    default:
-      return n;
+  if (n % 15 === 0) {
+    return 'fizzbuzz';
+  } else if (n % 3 === 0) {
+    return 'fizz';
+  } else if (n % 5 === 0) {
+    return 'buzz';
+  } else {
+    return n;
   }
+
+  // Tried this switch case. It passes tests, but the breaks are greyed out and eslint doesn't like it...
+  // switch (0) {
+  //   case n % 15:
+  //     return 'fizzbuzz';
+  //     break;
+  //   case n % 3:
+  //     return 'fizz';
+  //     break;
+  //   case n % 5:
+  //     return 'buzz';
+  //     break;
+  //   default:
+  //     return n;
+  // }
 };
 
 module.exports = {
