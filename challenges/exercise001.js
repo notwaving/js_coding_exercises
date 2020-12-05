@@ -1,68 +1,61 @@
-function capitalize(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
+capitalize = word => word.charAt(0).toUpperCase() + word.slice(1);
 
-function generateInitials(firstName, lastName) {
+generateInitials = (firstName, lastName) => {
   if (firstName === undefined) throw new Error('firstName is required');
   if (lastName === undefined) throw new Error('lastName is required');
   return firstName[0] + '.' + lastName[0];
-}
+};
 
-function addVAT(originalPrice, vatRate) {
+addVAT = (originalPrice, vatRate) => {
   if (originalPrice === undefined) throw new Error('originalPrice is requied');
   if (vatRate === undefined) throw new Error('vatRate is required');
   // add 100 to the VAT percentage rate and divide by that number.)
-  let answer = ((originalPrice / 100) * vatRate) + originalPrice;
+  let total = (originalPrice / 100) * vatRate + originalPrice;
   // This handles answers that are floats, as tests only want two decimal places returned
   // parseInt(answer) == answer compares a round number (integer) to the calculated answer
-  if (parseInt(answer) == answer) {
-    return answer;
+  if (parseInt(total) === total) {
+    return total;
   } else {
-    // This handles a float with potentially more than two decimal places.
-    // The result of toFixed() is a string, to this needs to be converted to a number before returning
-    let stringNum = answer.toFixed(2);
-    return parseFloat(stringNum);
+    return parseFloat(total.toFixed(2));
   }
-}
+};
 
-function getSalePrice(originalPrice, reduction) {
+getSalePrice = (originalPrice, reduction) => {
   if (originalPrice === undefined) throw new Error('originalPrice is required');
   if (reduction === undefined) throw new Error('reduction is required');
-  const numToSubtract = (originalPrice / 100) * reduction;
-  const answer = originalPrice - numToSubtract;
+
+  const answer = originalPrice - (originalPrice / 100) * reduction;
 
   // This handles answers that are floats, as tests only want two decimal places returned
-  if (parseInt(answer) == answer) {
+  if (parseInt(answer) === answer) {
     return answer;
   } else {
-    // This handles a float with potentially more than two decimal places.
-    // The result of toFixed() is a string, to this needs to be converted to a number before returning
-    let stringNum = answer.toFixed(2);
-    return parseFloat(stringNum);
+    return parseFloat(answer.toFixed(2));
   }
-}
+};
 
-function getMiddleCharacter(str) {
+getMiddleCharacter = str => {
   if (str === undefined) throw new Error('str is required');
+
+  // (Minus one to offset zero indexing)
+  const middle = Math.round(str.length / 2) - 1;
 
   // If number of letters is odd:
   if (str.length % 2 !== 0) {
-    // (Minus one to offset zero indexing)
-    const oddMiddle = Math.round(str.length / 2) - 1;
-    return str.charAt(oddMiddle);
+    return str.charAt(middle);
   } else {
-    const evenMiddle = Math.round(str.length / 2) - 1;
-    return str.charAt(evenMiddle) + str.charAt(evenMiddle + 1);
+    return str.charAt(middle) + str.charAt(middle + 1);
   }
-}
+};
 
-function reverseWord(word) {
+reverseWord = word => {
   if (word === undefined) throw new Error('word is required');
-  const splitWord = word.split('');
-  return splitWord.reverse().join('');
-}
 
-function reverseAllWords(words) {
+  const splitWord = [...word];
+  return splitWord.reverse().join('');
+};
+
+reverseAllWords = words => {
   if (words === undefined) throw new Error('words is required');
   // Words need to be reversed in place, i.e. retain original order in given array.
   let reversedArray = [];
@@ -72,22 +65,22 @@ function reverseAllWords(words) {
     reversedArray.push(word);
   }
   return reversedArray;
-}
+};
 
-function countLinuxUsers(users) {
+countLinuxUsers = users => {
   if (users === undefined) throw new Error('users is required');
 
   let numOfLinuxUsers = 0;
   let i;
   for (i = 0; i < users.length; i++) {
-    if (users[i].type == 'Linux') {
+    if (users[i].type === 'Linux') {
       numOfLinuxUsers++;
     }
   }
   return numOfLinuxUsers;
-}
+};
 
-function getMeanScore(scores) {
+getMeanScore = scores => {
   if (scores === undefined) throw new Error('scores is required');
 
   // Add up the scores in an array - reduce, but for loop for now
@@ -102,28 +95,41 @@ function getMeanScore(scores) {
   const mean = total / scores.length;
 
   // Handle answers that are floats, as tests only want two decimal places returned
-  if (parseInt(mean) == mean) {
+  if (parseInt(mean) === mean) {
     return mean;
   } else {
     // Handles a float with potentially more than two decimal places.
     // The result of toFixed() is a string, to this needs to be converted to a number before returning
-    let stringNum = mean.toFixed(2);
-    return parseFloat(stringNum);
+    return parseFloat(mean.toFixed(2));
   }
-}
+};
 
-function simpleFizzBuzz(n) {
+simpleFizzBuzz = n => {
   if (n === undefined) throw new Error('n is required');
-  if (n % 3 == 0 && n % 5 == 0) {
-    return 'fizzbuzz';
-  } else if (n % 3 == 0) {
-    return 'fizz';
-  } else if (n % 5 == 0) {
-    return 'buzz';
-  } else {
-    return n;
+
+  // if (n % 15 === 0) {
+  //   return 'fizzbuzz';
+  // } else if (n % 3 === 0) {
+  //   return 'fizz';
+  // } else if (n % 5 === 0) {
+  //   return 'buzz';
+  // } else {
+  //   return n;
+  // }
+  switch (0) {
+    case n % 15:
+      return 'fizzbuzz';
+      break;
+    case n % 3:
+      return 'fizz';
+      break;
+    case n % 5:
+      return 'buzz';
+      break;
+    default:
+      return n;
   }
-}
+};
 
 module.exports = {
   capitalize,
