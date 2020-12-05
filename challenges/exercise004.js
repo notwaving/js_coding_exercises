@@ -1,4 +1,4 @@
-function findSmallNums(nums) {
+findSmallNums = nums => {
   if (!nums) throw new Error('nums is required');
   // Looping through the nums array, return all items smaller than 1
   let smallNums = [];
@@ -10,9 +10,9 @@ function findSmallNums(nums) {
     }
   }
   return smallNums;
-}
+};
 
-function findNamesBeginningWith(names, char) {
+findNamesBeginningWith = (names, char) => {
   if (!names) throw new Error('names is required');
   if (!char) throw new Error('char is required');
   let beginsWithChar = [];
@@ -24,9 +24,9 @@ function findNamesBeginningWith(names, char) {
     }
   }
   return beginsWithChar;
-}
+};
 
-function findVerbs(words) {
+findVerbs = words => {
   if (!words) throw new Error('words is required');
 
   let verbs = [];
@@ -38,11 +38,11 @@ function findVerbs(words) {
     }
   }
   return verbs;
-}
+};
 
-function getIntegers(nums) {
+getIntegers = nums => {
   if (!nums) throw new Error('nums is required');
-  // Your code here
+
   let integers = [];
   let i;
 
@@ -52,9 +52,9 @@ function getIntegers(nums) {
     }
   }
   return integers;
-}
+};
 
-function getCities(users) {
+getCities = users => {
   if (!users) throw new Error('users is required');
   let cities = [];
   let i = 0;
@@ -63,9 +63,9 @@ function getCities(users) {
     cities.push(users[i].data.city.displayName);
   }
   return cities;
-}
+};
 
-function getSquareRoots(nums) {
+getSquareRoots = nums => {
   if (!nums) throw new Error('nums is required');
 
   let squareRootToTwo = [];
@@ -81,9 +81,9 @@ function getSquareRoots(nums) {
     }
   }
   return squareRootToTwo;
-}
+};
 
-function findSentencesContaining(sentences, str) {
+findSentencesContaining = (sentences, str) => {
   if (!sentences) throw new Error('sentences is required');
   if (!str) throw new Error('str is required');
 
@@ -104,9 +104,9 @@ function findSentencesContaining(sentences, str) {
     }
   }
   return results;
-}
+};
 
-function getLongestSides(triangles) {
+getLongestSides = triangles => {
   if (!triangles) throw new Error('triangles is required');
   /* 
   A two dimensional array is passed to the function. 
@@ -119,7 +119,7 @@ function getLongestSides(triangles) {
     longestSides.push(Math.max(...triangles[i]));
   }
   return longestSides;
-}
+};
 
 module.exports = {
   findSmallNums,
