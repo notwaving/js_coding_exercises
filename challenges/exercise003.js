@@ -58,12 +58,18 @@ checkIngredients = (menu, ingredient) => {
 duplicateNumbers = (arr1, arr2) => {
   if (arr1 === undefined) throw new Error('arr1 is required');
   if (arr2 === undefined) throw new Error('arr2 is required');
-  // Something with filter method?
-  // let z = arr1.filter(function (val) {
-  //   return arr2.indexOf(val) != -1;
-  // });
 
-  // return z;
+  let duplicates = [];
+
+  for (let i of arr1) {
+    if (arr2.includes(i)) {
+      duplicates.push(i);
+    }
+  }
+  // Removes matches that appear multiple times
+  duplicates.splice(0, duplicates.length, ...new Set(duplicates));
+
+  return duplicates.sort();
 };
 
 module.exports = {
