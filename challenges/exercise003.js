@@ -47,10 +47,12 @@ checkIngredients = (menu, ingredient) => {
   if (menu === undefined) throw new Error('menu is required');
   if (!ingredient) throw new Error('ingredient is required');
 
-  let storeCupboard = [];
-  menu.forEach(element => storeCupboard.push(element.ingredients));
+  let extractedIngredients = [];
 
-  // console.log (storeCupboard.flat());
+  menu.forEach(element => extractedIngredients.push(element.ingredients));
+
+  const storeCupboard = extractedIngredients.flat();
+
   let answer = storeCupboard.includes(ingredient);
   return answer;
 };
