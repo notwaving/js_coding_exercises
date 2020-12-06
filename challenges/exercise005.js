@@ -14,7 +14,24 @@ const findNextNumber = (nums, n) => {
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error('str is required');
-  // Your code here!
+  const array1 = [...str];
+
+  let count0 = 0;
+  let count1 = 0;
+
+  for (element in array1) {
+    if (array1[element] == 0) {
+      count0++;
+    } else {
+      count1++;
+    }
+  }
+  let answer = {
+    1: count1,
+    0: count0,
+  };
+
+  return answer;
 };
 
 const reverseNumber = n => {
