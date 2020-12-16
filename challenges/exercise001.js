@@ -70,13 +70,21 @@ const reverseAllWords = words => {
 const countLinuxUsers = users => {
   if (users === undefined) throw new Error('users is required');
 
+  // let numOfLinuxUsers = 0;
+  // let i;
+  // for (i = 0; i < users.length; i++) {
+  //   if (users[i].type === 'Linux') {
+  //     numOfLinuxUsers++;
+  //   }
+  // }
+  // return numOfLinuxUsers;
+
   let numOfLinuxUsers = 0;
-  let i;
-  for (i = 0; i < users.length; i++) {
-    if (users[i].type === 'Linux') {
-      numOfLinuxUsers++;
-    }
-  }
+
+  users.forEach(user => {
+    if (user.type == 'Linux') numOfLinuxUsers += 1;
+  });
+
   return numOfLinuxUsers;
 };
 
