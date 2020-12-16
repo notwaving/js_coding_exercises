@@ -9,12 +9,17 @@ const sumMultiples = arr => {
 
   let sum = 0;
 
-  for (let i = 0; i <= arr.length; i++) {
-    if (arr[i] % 3 === 0 || arr[i] % 5 === 0) {
-      sum += arr[i];
-      console.log(sum);
+  // for (let i = 0; i <= arr.length; i++) {
+  //   if (arr[i] % 3 === 0 || arr[i] % 5 === 0) {
+  //     sum += arr[i];
+  //   }
+  // }
+
+  arr.forEach(n => {
+    if (n % 3 === 0 || n % 5 === 0) {
+      sum += n;
     }
-  }
+  });
   return sum;
 };
 
