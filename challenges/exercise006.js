@@ -5,7 +5,16 @@
  * @returns {Number}
  */
 const sumMultiples = arr => {
-  if (arr === undefined) throw new Error("arr is required");
+  if (arr === undefined) throw new Error('arr is required');
+
+  let sum = 0;
+
+  for (let i = 0; i <= arr.length; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      sum += i;
+    }
+  }
+  return sum;
 };
 
 /**
@@ -14,7 +23,7 @@ const sumMultiples = arr => {
  * @returns {Boolean}
  */
 const isValidDNA = str => {
-  if (str === undefined) throw new Error("str is required");
+  if (str === undefined) throw new Error('str is required');
 };
 
 /**
@@ -23,7 +32,7 @@ const isValidDNA = str => {
  * @returns {String}
  */
 const getComplementaryDNA = str => {
-  if (str === undefined) throw new Error("str is required");
+  if (str === undefined) throw new Error('str is required');
 };
 
 /**
@@ -32,7 +41,7 @@ const getComplementaryDNA = str => {
  * @returns {Boolean}
  */
 const isItPrime = n => {
-  if (n === undefined) throw new Error("n is required");
+  if (n === undefined) throw new Error('n is required');
 };
 
 /**
@@ -47,8 +56,8 @@ const isItPrime = n => {
  * @returns {Array}
  */
 const createMatrix = (n, fill) => {
-  if (n === undefined) throw new Error("n is required");
-  if (fill === undefined) throw new Error("fill is required");
+  if (n === undefined) throw new Error('n is required');
+  if (fill === undefined) throw new Error('fill is required');
 };
 
 /**
@@ -64,8 +73,8 @@ const createMatrix = (n, fill) => {
  * @returns {Boolean}
  */
 const areWeCovered = (staff, day) => {
-  if (staff === undefined) throw new Error("staff is required");
-  if (day === undefined) throw new Error("day is required");
+  if (staff === undefined) throw new Error('staff is required');
+  if (day === undefined) throw new Error('day is required');
 };
 
 module.exports = {
@@ -74,5 +83,5 @@ module.exports = {
   getComplementaryDNA,
   isItPrime,
   createMatrix,
-  areWeCovered
+  areWeCovered,
 };
