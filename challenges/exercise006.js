@@ -44,6 +44,18 @@ const getComplementaryDNA = str => {
  */
 const isItPrime = n => {
   if (n === undefined) throw new Error('n is required');
+  if (!Number.isInteger(n)) throw new Error('number is required');
+
+  if (n % 2 != 0 || n == 1) {
+    for (let i = 2; i < n; i++) {
+      if (n % i == 0) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+  return false;
 };
 
 /**
@@ -80,10 +92,10 @@ const areWeCovered = (staff, day) => {
 };
 
 module.exports = {
-  sumMultiples,
+  sumMultiples, //Done
   isValidDNA,
   getComplementaryDNA,
-  isItPrime,
+  isItPrime, //Done
   createMatrix,
   areWeCovered,
 };

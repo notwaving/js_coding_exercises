@@ -27,3 +27,40 @@ describe('sumMultiples', () => {
     expect(sumMultiples([5, 3.0, 7.2, 8, 1.3, 10])).toBe(18);
   });
 });
+
+// describe('isValidDNA', () => {
+//   test('if a string is not passed to the function, throws an error', () => {
+//     expect(() => {
+//       isValidDNA();
+//     }).toThrow('str is required');
+//   });
+// });
+
+describe('isItPrime', () => {
+  test('if a number is not passed to the function, throws an error', () => {
+    expect(() => {
+      isItPrime();
+    }).toThrow('n is required');
+
+    expect(() => {
+      isItPrime('string');
+    }).toThrow('number is required');
+  });
+
+  test('returns false on 1', () => {
+    expect(isItPrime(1)).toBe(false);
+  });
+
+  test('returns false on even numbers', () => {
+    expect(isItPrime(2)).toBe(false);
+    expect(isItPrime(26)).toBe(false);
+  });
+
+  test('returns true on prime numbers', () => {
+    expect(isItPrime(3)).toBe(true);
+    expect(isItPrime(5)).toBe(true);
+    expect(isItPrime(7)).toBe(true);
+    expect(isItPrime(17)).toBe(true);
+    expect(isItPrime(101)).toBe(true);
+  });
+});
