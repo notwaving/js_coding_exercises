@@ -88,8 +88,17 @@ const getWordFrequencies = str => {
   if (str === undefined) throw new Error('str is required');
   // returns the frequencies of each word in a string
   // convert string to array
-  stringToArray = str.split(' ').toLowerCase();
-  return stringToArray;
+  let wordFreqObject = {};
+  const wordsArray = str.split(' ');
+  for (let i = 0; i < wordsArray.length; i++) {
+    let word = wordsArray[i].toLowerCase().replace(/[!?,]/g, '');
+    if (wordFreqObject[word] === undefined) {
+      wordFreqObject[word] = 1;
+    } else {
+      wordFreqObject[word] += 1;
+    }
+  }
+  return wordFreqObject;
 };
 
 module.exports = {
