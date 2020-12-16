@@ -32,15 +32,23 @@ const getTotalSubjects = people => {
   if (people === undefined) throw new Error('people is required');
   // This seems like a very roundabout way of finding the answer.
   // With more time I'd like to experiment with the more powerful functions
-  let count = [];
-  let i;
+  // let count = [];
+  // let i;
 
-  for (i = 0; i < people.length; i++) {
-    count.push(people[i].subjects);
-  }
-  // At the moment we have a multidimensional array, and we need to flatten it so everything gets counted.
-  const flattened = [].concat.apply([], count);
-  return flattened.length;
+  // for (i = 0; i < people.length; i++) {
+  //   count.push(people[i].subjects);
+  // }
+  // // At the moment we have a multidimensional array, and we need to flatten it so everything gets counted.
+  // const flattened = [].concat.apply([], count);
+  // return flattened.length;
+
+  let count = 0;
+
+  people.forEach(person => {
+    count += person.subjects.length;
+  });
+
+  return count;
 };
 
 const checkIngredients = (menu, ingredient) => {
