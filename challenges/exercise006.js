@@ -6,6 +6,8 @@
  */
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error('arr is required');
+  if (!Array.isArray(arr))
+    throw new Error('argument passed to function must be an array');
 
   let sum = 0;
 
