@@ -70,15 +70,6 @@ const reverseAllWords = words => {
 const countLinuxUsers = users => {
   if (users === undefined) throw new Error('users is required');
 
-  // let numOfLinuxUsers = 0;
-  // let i;
-  // for (i = 0; i < users.length; i++) {
-  //   if (users[i].type === 'Linux') {
-  //     numOfLinuxUsers++;
-  //   }
-  // }
-  // return numOfLinuxUsers;
-
   let numOfLinuxUsers = 0;
 
   users.forEach(user => {
@@ -124,21 +115,6 @@ const simpleFizzBuzz = n => {
   } else {
     return n;
   }
-
-  // Tried this switch case. It passes tests, but the breaks are greyed out and eslint doesn't like it...
-  // switch (0) {
-  //   case n % 15:
-  //     return 'fizzbuzz';
-  //     break;
-  //   case n % 3:
-  //     return 'fizz';
-  //     break;
-  //   case n % 5:
-  //     return 'buzz';
-  //     break;
-  //   default:
-  //     return n;
-  // }
 };
 
 module.exports = {
