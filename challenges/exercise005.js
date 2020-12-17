@@ -37,7 +37,7 @@ const count1sand0s = str => {
 const reverseNumber = n => {
   if (n === undefined) throw new Error('n is required');
 
-  nString = n.toString();
+  let nString = n.toString();
 
   return parseInt(nString.split('').reverse().join(''));
 };

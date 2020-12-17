@@ -1,10 +1,10 @@
 const {
   sumMultiples,
-  isValidDNA,
-  getComplementaryDNA,
+  // isValidDNA,
+  // getComplementaryDNA,
   isItPrime,
-  createMatrix,
-  areWeCovered,
+  // createMatrix,
+  // areWeCovered,
 } = require('../challenges/exercise006');
 
 describe('sumMultiples', () => {
