@@ -90,13 +90,7 @@ const getMeanScore = scores => {
   const mean = total / scores.length;
 
   // Handle answers that are floats, as tests only want two decimal places returned
-  if (parseInt(mean) === mean) {
-    return mean;
-  } else {
-    // Handles a float with potentially more than two decimal places.
-    // The result of toFixed() is a string, to this needs to be converted to a number before returning
-    return parseFloat(mean.toFixed(2));
-  }
+  return parseInt(mean) === mean ? mean : parseFloat(mean.toFixed(2));
 };
 
 const simpleFizzBuzz = n => {
