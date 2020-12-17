@@ -17,14 +17,9 @@ const camelCaseWords = words => {
   // Create new array, with first word removed
   const wordsToChange = words.slice(1);
 
-  // map?
-  let i;
-
-  for (i = 0; i < wordsToChange.length; i++) {
-    camelCased.push(
-      wordsToChange[i].charAt(0).toUpperCase() + wordsToChange[i].slice(1)
-    );
-  }
+  wordsToChange.forEach(word =>
+    camelCased.push(word.charAt(0).toUpperCase() + word.slice(1))
+  );
   return camelCased.join('');
 };
 
