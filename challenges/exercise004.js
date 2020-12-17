@@ -1,16 +1,9 @@
 const findSmallNums = nums => {
   if (!nums) throw new Error('nums is required');
   // Looping through the nums array, return all items smaller than 1
-
-  // filter()?
-  let smallNums = [];
-  let i;
-
-  for (i = 0; i < nums.length; i++) {
-    if (nums[i] < 1) {
-      smallNums.push(nums[i]);
-    }
-  }
+  const smallNums = nums.filter(function (value) {
+    return value < 1;
+  });
   return smallNums;
 };
 
