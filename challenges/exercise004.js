@@ -29,18 +29,6 @@ const findVerbs = words => {
 const getIntegers = nums => {
   if (!nums) throw new Error('nums is required');
 
-  // filter()
-
-  // let integers = [];
-  // let i;
-
-  // for (i = 0; i < nums.length; i++) {
-  //   if (nums[i] % 1 == 0) {
-  //     integers.push(nums[i]);
-  //   }
-  // }
-  // return integers;
-
   const onlyIntegers = nums.filter(function (num) {
     return num % 1 === 0;
   });
@@ -84,25 +72,10 @@ const findSentencesContaining = (sentences, str) => {
   if (!sentences) throw new Error('sentences is required');
   if (!str) throw new Error('str is required');
 
-  // filter()
-
-  // Convert all strings to lowercase
-  let sentencesLower = [];
-  let strLower = str.toLowerCase();
-
-  for (let i = 0; i < sentences.length; i++) {
-    sentencesLower.push(sentences[i].toLowerCase());
-  }
-
-  let results = [];
-
-  // for each sentence in array, if it includes the str, push that sentence to results
-  for (let i = 0; i < sentencesLower.length; i++) {
-    if (sentencesLower[i].includes(strLower)) {
-      results.push(sentences[i]);
-    }
-  }
-  return results;
+  const matchingSentences = sentences.filter(function (sentence) {
+    return sentence.toLowerCase().includes(str);
+  });
+  return matchingSentences;
 };
 
 const getLongestSides = triangles => {
