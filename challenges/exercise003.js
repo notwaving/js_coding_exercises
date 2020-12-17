@@ -12,7 +12,7 @@ const getSquares = nums => {
 const camelCaseWords = words => {
   if (words === undefined) throw new Error('words is required');
 
-  let camelCased = [];
+  const camelCased = [];
   // push first word in array to final array, camelCased
   camelCased.push(words[0]);
 
@@ -44,13 +44,8 @@ const checkIngredients = (menu, ingredient) => {
   if (menu === undefined) throw new Error('menu is required');
   if (!ingredient) throw new Error('ingredient is required');
 
-  for (let i = 0; i < menu.length; i++) {
-    let dishIngredients = menu[i].ingredients;
-    if (dishIngredients.includes(ingredient)) {
-      return true;
-    }
-  }
-  return false;
+  const includesIngredient = menu => menu.ingredients.includes(ingredient);
+  return menu.some(includesIngredient);
 };
 
 const duplicateNumbers = (arr1, arr2) => {
