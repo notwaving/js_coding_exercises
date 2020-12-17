@@ -1,12 +1,10 @@
 const getSquares = nums => {
   if (nums === undefined) throw new Error('nums is required');
-  let arrSquared = [];
-  let i;
 
-  for (i = 0; i < nums.length; i++) {
-    arrSquared.push(nums[i] * nums[i]);
-  }
-  return arrSquared;
+  const squared = nums.map(function (n) {
+    return n * n;
+  });
+  return squared;
 };
 
 const camelCaseWords = words => {
@@ -18,6 +16,8 @@ const camelCaseWords = words => {
 
   // Create new array, with first word removed
   const wordsToChange = words.slice(1);
+
+  // map?
   let i;
 
   for (i = 0; i < wordsToChange.length; i++) {
@@ -52,17 +52,11 @@ const duplicateNumbers = (arr1, arr2) => {
   if (arr1 === undefined) throw new Error('arr1 is required');
   if (arr2 === undefined) throw new Error('arr2 is required');
 
-  let duplicates = [];
+  const duplicates = arr1.filter(function (value) {
+    return arr2.includes(value);
+  });
 
-  for (let i of arr1) {
-    if (arr2.includes(i)) {
-      duplicates.push(i);
-    }
-  }
-  // Removes matches that appear multiple times
-  duplicates.splice(0, duplicates.length, ...new Set(duplicates));
-
-  return duplicates.sort();
+  return [...new Set(duplicates.sort())];
 };
 
 module.exports = {
