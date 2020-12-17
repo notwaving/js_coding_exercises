@@ -36,11 +36,16 @@ const getMiddleCharacter = str => {
   const middle = Math.round(str.length / 2) - 1;
 
   // If number of letters is odd:
-  if (str.length % 2 !== 0) {
-    return str.charAt(middle);
-  } else {
-    return str.charAt(middle) + str.charAt(middle + 1);
-  }
+  // if (str.length % 2 !== 0) {
+  //   return str.charAt(middle);
+  // } else {
+  //   return str.charAt(middle) + str.charAt(middle + 1);
+  // }
+
+  // Not convinced that Future Sam would be able to read this more easily than the if statement above...
+  return str.length % 2 !== 0
+    ? str.charAt(middle)
+    : str.charAt(middle) + str.charAt(middle + 1);
 };
 
 const reverseWord = word => {
