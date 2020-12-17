@@ -70,7 +70,9 @@ const countLinuxUsers = users => {
   let numOfLinuxUsers = 0;
 
   users.forEach(user => {
-    if (user.type == 'Linux') numOfLinuxUsers += 1;
+    if (user.type == 'Linux') {
+      numOfLinuxUsers += 1;
+    }
   });
   return numOfLinuxUsers;
 };
