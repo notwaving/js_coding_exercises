@@ -20,17 +20,10 @@ const findNamesBeginningWith = (names, char) => {
 const findVerbs = words => {
   if (!words) throw new Error('words is required');
 
-  //filter(), startsWith()
-
-  let verbs = [];
-  let i;
-
-  for (i = 0; i < words.length; i++) {
-    if (words[i].slice(0, 3) === 'to ') {
-      verbs.push(words[i]);
-    }
-  }
-  return verbs;
+  const foundVerbs = words.filter(function (word) {
+    return word.startsWith('to ');
+  });
+  return foundVerbs;
 };
 
 const getIntegers = nums => {
