@@ -47,20 +47,9 @@ const getCities = users => {
 const getSquareRoots = nums => {
   if (!nums) throw new Error('nums is required');
 
-  // map()
-
-  let squareRootToTwo = [];
-  let i;
-
-  for (i = 0; i < nums.length; i++) {
-    // Check for integer vs float
-    if (Math.sqrt(nums[i]) % 1 == 0) {
-      squareRootToTwo.push(Math.sqrt(nums[i]));
-    } else {
-      // Remember that .toFixed() returns a string!
-      squareRootToTwo.push(parseFloat(Math.sqrt(nums[i]).toFixed(2)));
-    }
-  }
+  const squareRootToTwo = nums.map(function (num) {
+    return Math.round(Math.sqrt(num) * 100) / 100;
+  });
   return squareRootToTwo;
 };
 
