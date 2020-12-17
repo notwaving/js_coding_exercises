@@ -57,13 +57,10 @@ const reverseWord = word => {
 
 const reverseAllWords = words => {
   if (words === undefined) throw new Error('words is required');
-  // Words need to be reversed in place, i.e. retain original order in given array.
-  let reversedArray = [];
-  let i;
-  for (i = 0; i < words.length; i++) {
-    let word = words[i].split('').reverse().join('');
-    reversedArray.push(word);
-  }
+
+  const reversedArray = words.map(function (word) {
+    return word.split('').reverse().join('');
+  });
   return reversedArray;
 };
 
@@ -75,7 +72,6 @@ const countLinuxUsers = users => {
   users.forEach(user => {
     if (user.type == 'Linux') numOfLinuxUsers += 1;
   });
-
   return numOfLinuxUsers;
 };
 
