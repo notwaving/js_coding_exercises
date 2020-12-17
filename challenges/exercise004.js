@@ -1,6 +1,8 @@
 const findSmallNums = nums => {
   if (!nums) throw new Error('nums is required');
   // Looping through the nums array, return all items smaller than 1
+
+  // filter()?
   let smallNums = [];
   let i;
 
@@ -15,6 +17,8 @@ const findSmallNums = nums => {
 const findNamesBeginningWith = (names, char) => {
   if (!names) throw new Error('names is required');
   if (!char) throw new Error('char is required');
+
+  // filter()
   let beginsWithChar = [];
   let i;
 
@@ -28,6 +32,8 @@ const findNamesBeginningWith = (names, char) => {
 
 const findVerbs = words => {
   if (!words) throw new Error('words is required');
+
+  //filter(), startsWith()
 
   let verbs = [];
   let i;
@@ -43,6 +49,8 @@ const findVerbs = words => {
 const getIntegers = nums => {
   if (!nums) throw new Error('nums is required');
 
+  // filter()
+
   let integers = [];
   let i;
 
@@ -56,6 +64,8 @@ const getIntegers = nums => {
 
 const getCities = users => {
   if (!users) throw new Error('users is required');
+
+  // returns array of same length, so use map()
   let cities = [];
   let i = 0;
 
@@ -67,6 +77,8 @@ const getCities = users => {
 
 const getSquareRoots = nums => {
   if (!nums) throw new Error('nums is required');
+
+  // map()
 
   let squareRootToTwo = [];
   let i;
@@ -86,6 +98,8 @@ const getSquareRoots = nums => {
 const findSentencesContaining = (sentences, str) => {
   if (!sentences) throw new Error('sentences is required');
   if (!str) throw new Error('str is required');
+
+  // filter()
 
   // Convert all strings to lowercase
   let sentencesLower = [];
@@ -112,6 +126,8 @@ const getLongestSides = triangles => {
   A two dimensional array is passed to the function. 
   For each internal array, push the largest number to a new one.
   */
+
+  // filter()
 
   let longestSides = [];
 
