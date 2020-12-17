@@ -11,15 +11,9 @@ const findNamesBeginningWith = (names, char) => {
   if (!names) throw new Error('names is required');
   if (!char) throw new Error('char is required');
 
-  // filter()
-  let beginsWithChar = [];
-  let i;
-
-  for (i = 0; i < names.length; i++) {
-    if (names[i].charAt(0) === char) {
-      beginsWithChar.push(names[i]);
-    }
-  }
+  const beginsWithChar = names.filter(function (value) {
+    return value.charAt(0) === char;
+  });
   return beginsWithChar;
 };
 
