@@ -31,15 +31,20 @@ const getIntegers = nums => {
 
   // filter()
 
-  let integers = [];
-  let i;
+  // let integers = [];
+  // let i;
 
-  for (i = 0; i < nums.length; i++) {
-    if (nums[i] % 1 == 0) {
-      integers.push(nums[i]);
-    }
-  }
-  return integers;
+  // for (i = 0; i < nums.length; i++) {
+  //   if (nums[i] % 1 == 0) {
+  //     integers.push(nums[i]);
+  //   }
+  // }
+  // return integers;
+
+  const onlyIntegers = nums.filter(function (num) {
+    return num % 1 === 0;
+  });
+  return onlyIntegers;
 };
 
 const getCities = users => {
