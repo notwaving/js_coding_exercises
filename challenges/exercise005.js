@@ -19,12 +19,13 @@ const count1sand0s = str => {
   let count0 = 0;
   let count1 = 0;
 
-  for (element in array1) {
-    if (array1[element] == 0) {
-      count0++;
-    } else {
-      count1++;
-    }
+  for (const element in array1) {
+    // if (array1[element] == 0) {
+    //   count0++;
+    // } else {
+    //   count1++;
+    // }
+    array1[element] == 0 ? count0++ : count1++;
   }
   let answer = {
     1: count1,
