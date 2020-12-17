@@ -78,15 +78,11 @@ const countLinuxUsers = users => {
 const getMeanScore = scores => {
   if (scores === undefined) throw new Error('scores is required');
 
-  // Add up the scores in an array - reduce, but for loop for now
+  // Add up the scores in an array
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  const total = scores.reduce(reducer);
 
-  let total = 0;
-  let i;
-
-  for (i = 0; i < scores.length; i++) {
-    total += scores[i];
-  }
-  // Calculate the mean by dividing by length of the scores array
+  // Calculate the mean
   const mean = total / scores.length;
 
   // Handle answers that are floats, as tests only want two decimal places returned
