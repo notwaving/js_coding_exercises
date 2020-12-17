@@ -24,14 +24,9 @@ const getSalePrice = (originalPrice, reduction) => {
   if (originalPrice === undefined) throw new Error('originalPrice is required');
   if (reduction === undefined) throw new Error('reduction is required');
 
-  const answer = originalPrice - (originalPrice / 100) * reduction;
-
-  // This handles answers that are floats, as tests only want two decimal places returned
-  if (parseInt(answer) === answer) {
-    return answer;
-  } else {
-    return parseFloat(answer.toFixed(2));
-  }
+  return (
+    originalPrice - Math.round(((originalPrice * reduction) / 100) * 100) / 100
+  );
 };
 
 const getMiddleCharacter = str => {
