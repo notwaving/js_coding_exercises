@@ -85,13 +85,9 @@ const getLongestSides = triangles => {
   For each internal array, push the largest number to a new one.
   */
 
-  // filter()
-
-  let longestSides = [];
-
-  for (let i = 0; i < triangles.length; i++) {
-    longestSides.push(Math.max(...triangles[i]));
-  }
+  const longestSides = triangles.map(function (sides) {
+    return Math.max(...sides);
+  });
   return longestSides;
 };
 
