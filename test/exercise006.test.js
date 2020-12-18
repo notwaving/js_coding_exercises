@@ -34,6 +34,11 @@ describe('isValidDNA', () => {
       isValidDNA(undefined);
     }).toThrow('str is required');
   });
+  test('if a data type other than string is passed to the function, throws an error', () => {
+    expect(() => {
+      isValidDNA(!String);
+    }).toThrow('str is required');
+  });
 
   test('returns true if str is valid DNA', () => {
     expect(isValidDNA('ATCGAAA')).toBe(true);
