@@ -1,6 +1,6 @@
 const {
   sumMultiples,
-  // isValidDNA,
+  isValidDNA,
   // getComplementaryDNA,
   isItPrime,
   // createMatrix,
@@ -28,13 +28,20 @@ describe('sumMultiples', () => {
   });
 });
 
-// describe('isValidDNA', () => {
-//   test('if a string is not passed to the function, throws an error', () => {
-//     expect(() => {
-//       isValidDNA();
-//     }).toThrow('str is required');
-//   });
-// });
+describe('isValidDNA', () => {
+  test('if a string is not passed to the function, throws an error', () => {
+    expect(() => {
+      isValidDNA(undefined);
+    }).toThrow('str is required');
+  });
+
+  test('returns true if str is valid DNA', () => {
+    expect(isValidDNA('ATCGAAA')).toBe(true);
+  });
+  test('returns false if str is invalid DNA', () => {
+    expect(isValidDNA('OTCAG')).toBe(false);
+  });
+});
 
 describe('isItPrime', () => {
   test('if a number is not passed to the function, throws an error', () => {
