@@ -20,11 +20,6 @@ const count1sand0s = str => {
   let count1 = 0;
 
   for (const element in array1) {
-    // if (array1[element] == 0) {
-    //   count0++;
-    // } else {
-    //   count1++;
-    // }
     array1[element] == 0 ? count0++ : count1++;
   }
   let answer = {
@@ -38,7 +33,7 @@ const count1sand0s = str => {
 const reverseNumber = n => {
   if (n === undefined) throw new Error('n is required');
 
-  let nString = n.toString();
+  const nString = n.toString();
 
   return parseInt(nString.split('').reverse().join(''));
 };
@@ -75,12 +70,11 @@ const findNeedle = (haystack, searchTerm) => {
   if (searchTerm === undefined) throw new Error('searchTerm is required');
 
   let listOfStrings = [];
-
-  for (value in haystack) {
+  for (const value in haystack) {
     listOfStrings.push(haystack[value].toString().toLowerCase());
   }
 
-  let oneLowerString = listOfStrings.join(' ');
+  const oneLowerString = listOfStrings.join(' ');
 
   return oneLowerString.includes(searchTerm.toLowerCase());
 };
@@ -92,11 +86,9 @@ const getWordFrequencies = str => {
   const wordsArray = str.split(' ');
   for (let i = 0; i < wordsArray.length; i++) {
     let word = wordsArray[i].toLowerCase().replace(/[!?,]/g, '');
-    if (wordFreqObject[word] === undefined) {
-      wordFreqObject[word] = 1;
-    } else {
-      wordFreqObject[word] += 1;
-    }
+    wordFreqObject[word] === undefined
+      ? (wordFreqObject[word] = 1)
+      : (wordFreqObject[word] += 1);
   }
   return wordFreqObject;
 };
