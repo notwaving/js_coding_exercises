@@ -53,6 +53,8 @@ const isItPrime = n => {
       } else {
         return true;
       }
+      // Tried refactoring the above with this ternary, but it failed 'returns true on prime numbers'
+      // n % i == 0 ? false : true;
     }
   }
   return false;
