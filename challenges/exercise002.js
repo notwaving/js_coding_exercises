@@ -5,8 +5,7 @@ const getFillings = sandwich => {
 
 const isFromManchester = person => {
   if (person === undefined) throw new Error('person is required');
-
-  return person.city === 'Manchester' ? true : false;
+  return person.city === 'Manchester';
 };
 
 const getBusNumbers = people => {
@@ -16,17 +15,16 @@ const getBusNumbers = people => {
 
 const countSheep = arr => {
   if (arr === undefined) throw new Error('arr is required');
-
   return arr.filter(x => x == 'sheep').length;
 };
 
 const hasMPostCode = person => {
   if (person === undefined) throw new Error('person is required');
 
-  return person.address.postCode.charAt(0) === 'M' &&
+  return (
+    person.address.postCode.charAt(0) === 'M' &&
     person.address.city === 'Manchester'
-    ? true
-    : false;
+  );
 };
 
 module.exports = {
