@@ -96,5 +96,12 @@ describe('createMatrix', () => {
       ['foo', 'foo', 'foo'],
       ['foo', 'foo', 'foo'],
     ]);
+
+    expect(createMatrix(4, 19)).toEqual([
+      [19, 19, 19, 19],
+      [19, 19, 19, 19],
+      [19, 19, 19, 19],
+      [19, 19, 19, 19],
+    ]);
   });
 });
