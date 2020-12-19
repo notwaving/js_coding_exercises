@@ -107,9 +107,10 @@ describe('createMatrix', () => {
 
 describe('areWeCovered', () => {
   const staff = [
-    { name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday'] },
+    { name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday', 'Sunday'] },
     { name: 'Pedro', rota: ['Saturday', 'Sunday', 'Tuesday', 'Wednesday'] },
     { name: 'Mikey', rota: ['Tuesday', 'Thursday', 'Saturday', 'Sunday'] },
+    { name: 'Leila', rota: ['Tuesday', 'Thursday', 'Sunday'] },
   ];
   test('returns false if fewer than 3 staff are available on a given day', () => {
     expect(areWeCovered(staff, 'Saturday')).toBe(false);
@@ -117,5 +118,6 @@ describe('areWeCovered', () => {
   });
   test('returns true if 3 or more staff are available on a given day', () => {
     expect(areWeCovered(staff, 'Tuesday')).toBe(true);
+    expect(areWeCovered(staff, 'Sunday')).toBe(true);
   });
 });
