@@ -4,6 +4,17 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error('n is required');
+  // can't split into single digits without converting to string first.
+  // Use map and parseInt to convert to numbers
+  const digits = n
+    .toString()
+    .split('')
+    .map(function (item) {
+      return parseInt(item, 10);
+    });
+
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  return digits.reduce(reducer);
 };
 
 /**
