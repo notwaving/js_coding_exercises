@@ -1,7 +1,7 @@
 const {
   sumMultiples,
   isValidDNA,
-  // getComplementaryDNA,
+  getComplementaryDNA,
   isItPrime,
   // createMatrix,
   // areWeCovered,
@@ -34,17 +34,32 @@ describe('isValidDNA', () => {
       isValidDNA(undefined);
     }).toThrow('str is required');
   });
-  test('if a data type other than string is passed to the function, throws an error', () => {
-    expect(() => {
-      isValidDNA(!String);
-    }).toThrow('str is required');
-  });
 
   test('returns true if str is valid DNA', () => {
     expect(isValidDNA('ATCGAAA')).toBe(true);
   });
   test('returns false if str is invalid DNA', () => {
     expect(isValidDNA('OTCAG')).toBe(false);
+  });
+  test('returns false if str is not in uppercase', () => {
+    expect(isValidDNA('agtcca')).toBe(false);
+  });
+});
+
+describe('getComplementaryDNA', () => {
+  test('if a string is not passed to the function, throws an error', () => {
+    expect(() => {
+      getComplementaryDNA(undefined);
+    }).toThrow('str is required');
+  });
+  // test('if a data type other than string is passed to the function, throws an error', () => {
+  //   expect(() => {
+  //     getComplementaryDNA(42);
+  //   }).toThrow('str is required');
+  // });
+
+  test('returns TACG if str is ATGC', () => {
+    expect(getComplementaryDNA('ATGC')).toEqual('TACG');
   });
 });
 

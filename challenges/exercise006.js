@@ -26,7 +26,6 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error('str is required');
-  if (str === !String) throw new Error('str is required');
   return [...str].every(char => 'CGTA'.includes(char));
 };
 
@@ -37,6 +36,24 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error('str is required');
+  // if (str != typeof string) throw new Error('str is required');
+  let compDNA = '';
+
+  const strArr = [...str];
+
+  strArr.forEach(letter => {
+    if (letter === 'C') {
+      compDNA += 'G';
+    } else if (letter === 'G') {
+      compDNA += 'C';
+    } else if (letter === 'T') {
+      compDNA += 'A';
+    } else {
+      compDNA += 'T';
+    }
+  });
+  console.log(compDNA);
+  return compDNA;
 };
 
 /**
@@ -97,7 +114,7 @@ const areWeCovered = (staff, day) => {
 
 module.exports = {
   sumMultiples, //Done
-  isValidDNA,
+  isValidDNA, // Done
   getComplementaryDNA,
   isItPrime, //Done
   createMatrix,
