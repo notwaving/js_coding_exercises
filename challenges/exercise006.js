@@ -118,6 +118,13 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error('staff is required');
   if (day === undefined) throw new Error('day is required');
+
+  let count = 0;
+
+  for (let i = 0; i < staff.length; i++) {
+    staff[i].rota.includes(day) ? count++ : (count += 0);
+  }
+  return count >= 3;
 };
 
 module.exports = {
@@ -125,6 +132,6 @@ module.exports = {
   isValidDNA, // Done
   getComplementaryDNA, // Done
   isItPrime, //Done
-  createMatrix,
+  createMatrix, // Done
   areWeCovered,
 };

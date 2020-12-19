@@ -4,7 +4,7 @@ const {
   getComplementaryDNA,
   isItPrime,
   createMatrix,
-  // areWeCovered,
+  areWeCovered,
 } = require('../challenges/exercise006');
 
 describe('sumMultiples', () => {
@@ -89,19 +89,33 @@ describe('isItPrime', () => {
   });
 });
 describe('createMatrix', () => {
-  // result of returning the correct array
   test('returns an array of arrays, n * n, filled with fill', () => {
     expect(createMatrix(3, 'foo')).toEqual([
       ['foo', 'foo', 'foo'],
       ['foo', 'foo', 'foo'],
       ['foo', 'foo', 'foo'],
     ]);
-
     expect(createMatrix(4, 19)).toEqual([
       [19, 19, 19, 19],
       [19, 19, 19, 19],
       [19, 19, 19, 19],
       [19, 19, 19, 19],
     ]);
+  });
+  // Think about other tests you could do
+});
+
+describe('areWeCovered', () => {
+  const staff = [
+    { name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday'] },
+    { name: 'Pedro', rota: ['Saturday', 'Sunday', 'Tuesday', 'Wednesday'] },
+    { name: 'Mikey', rota: ['Tuesday', 'Thursday', 'Saturday', 'Sunday'] },
+  ];
+  test('returns false if fewer than 3 staff are available on a given day', () => {
+    expect(areWeCovered(staff, 'Saturday')).toBe(false);
+    expect(areWeCovered(staff, 'Monday')).toBe(false);
+  });
+  test('returns true if 3 or more staff are available on a given day', () => {
+    expect(areWeCovered(staff, 'Tuesday')).toBe(true);
   });
 });
