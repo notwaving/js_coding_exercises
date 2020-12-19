@@ -128,10 +128,10 @@ const areWeCovered = (staff, day) => {
 };
 
 module.exports = {
-  sumMultiples, //Done
-  isValidDNA, // Done
-  getComplementaryDNA, // Done
-  isItPrime, //Done
-  createMatrix, // Done
+  sumMultiples,
+  isValidDNA,
+  getComplementaryDNA,
+  isItPrime,
+  createMatrix,
   areWeCovered,
 };
