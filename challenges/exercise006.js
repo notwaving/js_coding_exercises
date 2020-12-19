@@ -37,6 +37,7 @@ const isValidDNA = str => {
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error('str is required');
   // if (str != typeof string) throw new Error('str is required');
+  if (!isValidDNA(str)) throw new Error('str must be a valid DNA string');
   let compDNA = '';
 
   const strArr = [...str];
@@ -52,7 +53,6 @@ const getComplementaryDNA = str => {
       compDNA += 'T';
     }
   });
-  console.log(compDNA);
   return compDNA;
 };
 

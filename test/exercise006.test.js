@@ -58,8 +58,10 @@ describe('getComplementaryDNA', () => {
   //   }).toThrow('str is required');
   // });
 
-  test('returns TACG if str is ATGC', () => {
+  test('returns complementary str', () => {
     expect(getComplementaryDNA('ATGC')).toEqual('TACG');
+    expect(getComplementaryDNA('AAAAA')).toEqual('TTTTT');
+    expect(getComplementaryDNA('G')).toEqual('C');
   });
 });
 
