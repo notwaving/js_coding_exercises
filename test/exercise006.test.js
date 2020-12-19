@@ -3,7 +3,7 @@ const {
   isValidDNA,
   getComplementaryDNA,
   isItPrime,
-  // createMatrix,
+  createMatrix,
   // areWeCovered,
 } = require('../challenges/exercise006');
 
@@ -52,11 +52,6 @@ describe('getComplementaryDNA', () => {
       getComplementaryDNA(undefined);
     }).toThrow('str is required');
   });
-  // test('if a data type other than string is passed to the function, throws an error', () => {
-  //   expect(() => {
-  //     getComplementaryDNA(42);
-  //   }).toThrow('str is required');
-  // });
 
   test('returns complementary str', () => {
     expect(getComplementaryDNA('ATGC')).toEqual('TACG');
@@ -91,5 +86,15 @@ describe('isItPrime', () => {
     expect(isItPrime(7)).toBe(true);
     expect(isItPrime(17)).toBe(true);
     expect(isItPrime(101)).toBe(true);
+  });
+});
+describe('createMatrix', () => {
+  // result of returning the correct array
+  test('returns an array of arrays, n * n, filled with fill', () => {
+    expect(createMatrix(3, 'foo')).toEqual([
+      ['foo', 'foo', 'foo'],
+      ['foo', 'foo', 'foo'],
+      ['foo', 'foo', 'foo'],
+    ]);
   });
 });
