@@ -19,6 +19,7 @@ describe('createRange', () => {
   test('returns a range as defined by start, end, and step', () => {
     expect(createRange(3, 8, 2)).toEqual([3, 5, 7]);
     expect(createRange(-5, 13, 7)).toEqual([-5, 2, 9]);
+    expect(createRange(14.5, 22.4, 4)).toEqual([14.5, 18.5]);
   });
 
   test('Both the start and the end numbers are inclusive', () => {
