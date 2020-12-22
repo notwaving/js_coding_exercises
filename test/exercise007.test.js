@@ -75,8 +75,9 @@ describe('getScreentimeAlertList', () => {
     },
   ];
 
-  test('Both the start and the end numbers are inclusive', () => {
+  test('return an array of usernames of users who have used more than 100 minutes of screentime for a given date', () => {
     expect(getScreentimeAlertList(users, '2019-05-02')).toEqual(['beth_1234']);
+    expect(getScreentimeAlertList(users, '2019-05-03')).toEqual([]);
   });
 });
 
