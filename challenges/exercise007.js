@@ -131,11 +131,37 @@ const findWinner = board => {
   const X = currentValue => currentValue === 'X';
   const O = currentValue => currentValue === '0';
 
-  // Check horizontal
+  // Check rows
+  for (let i = 0; i < board.length; i++) {
+    if (board[i].every(X)) {
+      return 'X';
+    }
+    if (board[i].every(O)) {
+      return '0';
+    }
+  }
 
   // Check vertical
+  const vertical = board.map((col, i) => board.map(row => row[i]));
+  for (let i = 0; i < vertical.length; i++) {
+    if (vertical[i].every(X)) {
+      return 'X';
+    }
+    if (vertical[i].every(O)) {
+      return '0';
+    }
+  }
 
   // Check diagonal
+  const diagonal = board.map((row, r) => board[r][r]);
+  if (diagonal.every(X)) {
+    return 'X';
+  }
+  if (diagonal.every(O)) {
+    return '0';
+  }
+
+  return null;
 };
 
 module.exports = {
