@@ -3,7 +3,7 @@ const {
   createRange,
   getScreentimeAlertList,
   hexToRGB,
-  //findWinner,
+  findWinner,
 } = require('../challenges/exercise007');
 
 describe('sumDigits', () => {
@@ -89,4 +89,31 @@ describe('hexToRGB', () => {
   });
 });
 
-// describe('findWinner', () => {});
+describe('findWinner', () => {
+  test('returns the correct winner: "X" for player X, "0" for player O, and null for no winner', () => {
+    const board1 = [
+        ['X', '0', null],
+        ['X', null, '0'],
+        ['X', null, '0'],
+      ],
+      board2 = [
+        ['0', null, 'X'],
+        ['0', '0', '0'],
+        ['X', null, 'X'],
+      ],
+      board3 = [
+        ['0', 'X', null],
+        ['X', '0', null],
+        ['X', null, '0'],
+      ],
+      board4 = [
+        ['X', 'X', '0'],
+        ['0', '0', 'X'],
+        ['X', '0', 'X'],
+      ];
+    expect(findWinner(board1)).toBe('X');
+    expect(findWinner(board2)).toBe('0');
+    expect(findWinner(board3)).toBe('0');
+    expect(findWinner(board4)).toBe(null);
+  });
+});

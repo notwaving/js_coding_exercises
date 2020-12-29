@@ -127,6 +127,15 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error('board is required');
+
+  const X = currentValue => currentValue === 'X';
+  const O = currentValue => currentValue === '0';
+
+  // Check horizontal
+
+  // Check vertical
+
+  // Check diagonal
 };
 
 module.exports = {
